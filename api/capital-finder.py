@@ -11,16 +11,16 @@ class handler(BaseHTTPRequestHandler):
         dic = dict(query_strings_list)
         print(dic)
         capital = dic.get("capital")
-        country = dic.get("name")
+        country = dic.get("country")
 
         if capital:
             url = "https://restcountries.com/v3.1/capital/"
             res = requests.get(url+capital)
             data = res.json()
             result = data[0]["name"]["common"]
-            
+
         elif country :
-            url = "https://restcountries.com/v3.1/country/"
+            url = "https://restcountries.com/v3.1/name/"
             res = requests.get(url+capital)
             data = res.json()
             result = data[0]["capital"][0]
