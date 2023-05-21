@@ -18,14 +18,15 @@ class handler(BaseHTTPRequestHandler):
             res = requests.get(url+capital)
             data = res.json()
             result = data[0]["name"]["common"]
+            str = capital + " is the capital of " + result + "."   
 
         elif country :
             url = "https://restcountries.com/v3.1/name/"
             res = requests.get(url+capital)
             data = res.json()
             result = data[0]["capital"][0]
-    
-        str = capital + " is the capital of " + result + "."   
+            str = "The capital of " + country + "is " + result + "."
+   
         self.send_response(200)
         self.send_header('Content-type','text/plain')
         self.end_headers()
