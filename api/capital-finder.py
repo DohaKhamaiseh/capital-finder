@@ -12,7 +12,7 @@ class handler(BaseHTTPRequestHandler):
         capital = dic.get("capital")
 
         if capital:
-            url = "https://restcountries.com/v3.1/"
+            url = "https://restcountries.com/v3.1/capital"
             res = requests.get(url+capital)
             data = res.json()
             result = data[0]["name"]["common"]
