@@ -22,7 +22,7 @@ class handler(BaseHTTPRequestHandler):
 
         elif country :
             url = "https://restcountries.com/v3.1/name/"
-            res = requests.get(url+capital)
+            res = requests.get(url+country)
             data = res.json()
             result = data[0]["capital"][0]
             str = "The capital of " + country + "is " + result + "."
