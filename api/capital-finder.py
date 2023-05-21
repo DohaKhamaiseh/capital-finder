@@ -19,7 +19,7 @@ class handler(BaseHTTPRequestHandler):
             result = data[0]["name"]["common"]
         
     
-        str = capital + "is the capital of" + result    
+        str = capital + " is the capital of " + result + "."   
         self.send_response(200)
         self.send_header('Content-type','text/plain')
         self.end_headers()
