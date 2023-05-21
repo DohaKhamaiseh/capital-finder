@@ -25,7 +25,7 @@ class handler(BaseHTTPRequestHandler):
             res = requests.get(url+country)
             data = res.json()
             result = data[0]["capital"][0]
-            str = "The capital of " + country + "is " + result + "."
+            str = "The capital of " + country + " is " + result + "."
    
         self.send_response(200)
         self.send_header('Content-type','text/plain')
