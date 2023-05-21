@@ -9,6 +9,7 @@ class handler(BaseHTTPRequestHandler):
         url_components = parse.urlsplit(s)
         query_strings_list = parse.parse_qsl(url_components.query)
         dic = dict(query_strings_list)
+        print(dic)
         capital = dic.get("capital")
 
         if capital:
@@ -17,8 +18,8 @@ class handler(BaseHTTPRequestHandler):
             data = res.json()
             result = data[0]["name"]["common"]
         
-       
-        
+    
+        str = capital + "is the capital of" + result    
         self.send_response(200)
         self.send_header('Content-type','text/plain')
         self.end_headers()
